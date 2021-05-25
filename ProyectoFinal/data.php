@@ -1,5 +1,4 @@
 <?php
-    if(isset($_POST['submit'])) {
         $whPaterno = $_POST['primApell'];
         $whMaterno = $_POST['secApell'];
         $whNombre = $_POST['nombre'];
@@ -25,4 +24,4 @@
             $stmt->close();
             $conn->close();
         }
-    }
+
