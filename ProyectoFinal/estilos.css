@@ -1,0 +1,113 @@
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+.menu{
+    background-color: rgb(2, 15, 114);
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #aca002;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, .6);
+    margin-bottom: 10px;
+}
+.logo{
+    color: #aca002;
+    font-size: 35px;
+    padding: 0 80px;
+    font-weight: bold;
+}
+.menu_items{
+    display: flex;
+    list-style: none;
+    margin-right: 30px;
+}
+.menu_items li{
+    border-radius: 3px;
+    margin: 0 5px;
+}
+.menu_items li a{
+    padding: 7px 13px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    text-transform: uppercase;
+    color: #aca002;
+}
+.menu_items li:hover, li.active{
+    background-color: rgba(0, 0, 0, .3);
+    transition: .4s;
+}
+.btn_menu{
+    margin-right: 30px;
+    font-size: 25px;
+    color: #aca002;
+    cursor: pointer;
+}
+
+.id{
+    width: 15%;
+    max-width: 500px;
+    margin: auto;
+}
+.titulo{
+    background: rgb(2, 15, 114);
+    color: #aca002;
+    text-align: center;
+    padding: 20px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    border-bottom: 5px solid #aca002;
+}
+.datos{
+    font-size: 14px;
+}
+input{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+select{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.input-49{
+    width: 49%;
+}
+.input-100{
+    width: 100%;
+}
+.input-50{
+    width: 50%;
+}
+.boton{
+    text-align: center;
+    background: #aca002;
+    color: rgb(2, 15, 114);
+    width: 49%;
+}
+.input-68{
+    width: 68%;
+}
+.input-75{
+    width: 75%;
+}
+.checkbox{
+    width: 20%;
+}
+.input-83{
+    width: 83%;
+}
+.botonCURP{
+    text-align: center;
+    background: #aca002;
+    color: rgb(2, 15, 114);
+    width: 100%;
+}
