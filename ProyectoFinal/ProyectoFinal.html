@@ -72,7 +72,7 @@
                 <i class="fas fa-bars"></i>
             </span>
         </nav>
-        <form method="get" action="data.php" method="POST" name="formulario" class="id" enctype="multipart/form-data">
+        <form method="get" action="data.php" method="post" name="formulario" class="id" enctype="multipart/form-data">
                     <h2 class="titulo">Formulario de Pre-Inscripción</h2>
 
                 
@@ -394,12 +394,12 @@
                 <label class="datos">CURP: </label><input name="whCurp" id="whCurp" value="" type="text" class="input-83" required>
 
 				<br><br>
-                <label class="datos">Sube tu Comprobante de pago </label><input name="file" type="file" required>
+                <label class="datos">Sube tu Comprobante de pago </label><input name="file" id="file" type="file" required>
 
             <br><br>
             <input type="submit" name="Enviar" class="boton">
             <input type="reset" name="Borrar" class="boton">
 
-        </form>   
+        </form>
     </body>
 </html>
