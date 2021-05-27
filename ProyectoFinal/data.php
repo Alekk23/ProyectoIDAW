@@ -1,6 +1,4 @@
 <?php
-include('ProyectoFinal.html');
-
 $con = mysqli_connect('localhost', 'root', 'ProgramacionPOO', 'alumnopago');
 
 $whPaterno = $_POST['whPaterno'];
@@ -32,4 +30,6 @@ if($rs){
     echo "<script> alert('Registro incorrecto');
     location.href = 'ProyectoFinal.html';
     </script>";
+
+
 }
