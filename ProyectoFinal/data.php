@@ -9,11 +9,25 @@ $whGenero = $_POST['whGenero'];
 $whNacion = $_POST['whNacion'];
 $whEntNac = $_POST['whEntNac'];
 $whCurp = $_POST['whCurp'];
+
+
 $targetDir = "uploads/";
 $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
+
+if(isset($_POST["Enviar"]) && !empty($_FILES["file"]["name"])) {
+    // Allow certain file formats
+    $allowTypes = array('jpg', 'png', 'jpeg');
+    if (in_array($fileType, $allowTypes)) {
+        // Upload file to server
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+            // Insert image file name into database
+            $insert = $con->query("INSERT into comprobante (pago) VALUES ('" . $fileName . "', NOW())");
+        }
+    }
+}
 if($whNacion = 1){
     $whNacion = "MEXICO";
 }
