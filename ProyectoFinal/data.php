@@ -16,26 +16,17 @@ $fileName = basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-
-if(isset($_POST["Enviar"]) && !empty($_FILES["file"]["name"])) {
-    // Allow certain file formats
-    $allowTypes = array('jpg', 'png', 'jpeg');
-    if (in_array($fileType, $allowTypes)) {
-        // Upload file to server
-        if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
-            // Insert image file name into database
-            $insert = $con->query("INSERT into comprobante (pago) VALUES ('" . $fileName . "', NOW())");
-        }
-    }
+switch ($whGenero){
+    case "H":
+        $whGenero = "MUJER";
+        break;
+    case "M":
+        $whGenero = "HOMBRE";
+        break;
 }
+
 if($whNacion = 1){
     $whNacion = "MEXICO";
-}
-if($whGenero = "M") {
-    $whGenero = "HOMBRE";
-}
-if($whGenero = "H"){
-    $whGenero = "MUJER";
 }
 switch($whEntNac){
     case 0:
@@ -139,6 +130,14 @@ switch($whEntNac){
         break;
 }
 
+if(isset($_POST["Enviar"]) && !empty($_FILES["file"]["name"])) {
+    $allowTypes = array('jpg', 'png', 'jpeg');
+    if (in_array($fileType, $allowTypes)) {
+        if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+            $insert = $con->query("INSERT into comprobante (pago) VALUES ('" . $fileName . "', NOW())");
+        }
+    }
+}
 
 $sql = "INSERT INTO `comprobante`(`id`, `primApell`, `secApell`, `nombre`, `fecha`, `genero`, `lugar`, `lugarmun`, `curp`, `pago`) VALUES ('0',  '$whPaterno', '$whMaterno', '$whNombre', '$whFecNac', '$whGenero', '$whNacion', '$whEntNac', '$whCurp', '$fileName')";
 
@@ -155,6 +154,4 @@ if($rs){
     echo "<script> alert('Registro incorrecto');
     location.href = 'ProyectoFinal.html';
     </script>";
-
-
 }
