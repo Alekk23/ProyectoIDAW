@@ -1,9 +1,7 @@
 <?php
 $con = mysqli_connect('localhost', 'root', 'ProgramacionPOO', 'alumnopago');
 
-$whCurpReq = $_POST['whCurpReq'];
-
-$sql = "SELECT primApell, secApell, nombre, genero, fecha, lugar, lugarmun, pago  FROM comprobante WHERE curp='$whCurpReq'";
+$sql = "SELECT primApell, secApell, nombre, curp, pago FROM comprobante";
 
 
 $result = mysqli_query($con, $sql);
