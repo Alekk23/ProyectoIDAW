@@ -7,8 +7,19 @@ $sql = "SELECT primApell, secApell, nombre, genero, fecha, lugar, lugarmun, pago
 
 $result = mysqli_query($con, $sql);
 
+echo "<link rel='stylesheet' type='text/css' href='estilotable.css' />";
 echo "<br>";
 echo "<table border='1' style='width:100%'>";
+echo "<tr>";
+echo "<td>" . "PRIMER APELLIDO" . "</td>";
+echo "<td>" . "SEGUNDO APELLIDO" . "</td>";
+echo "<td>" . "NOMBRE" . "</td>";
+echo "<td>" . "GENERO" . "</td>";
+echo "<td>" . "FECHA DE NACIMIENTO" . "</td>";
+echo "<td>" . "NACIONALIDAD" . "</td>";
+echo "<td>" . "ENTIDAD DE NACIMIENTO" . "</td>";
+echo "<td>" . "COMPROBANTE DE PAGO" . "</td>";
+echo "<tr>";
 while ($row = mysqli_fetch_assoc($result)) {
     $Pago = $row['pago'];
     echo "<tr>";
